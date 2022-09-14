@@ -114,8 +114,7 @@ a.item {
 /* Introduction */
 .introduction {
   display: flex;
-  flex-direction: row;
-  /* margin: 40px; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -133,6 +132,12 @@ img.profile-img {
   display: block;
   width: 150px;
   border-radius: 100px;
+}
+
+.intro-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Youtube Section */
