@@ -390,7 +390,7 @@ a:hover {
 /* Media */
 @media (max-width: 1080px) {
   .youtube-vid iframe {
-    width: 720px;
+    width: 580px;
     height: 360px;
   }
 
