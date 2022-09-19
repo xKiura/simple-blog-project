@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Kiura | Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="blog-title">
+          <h1>Kiura</h1>
+          <h4>Gamer, Musician, Developer.</h4>
+        </div>
+        <div class="nav-items">
+          <a href="/blog.html" class="item link">Youtube</a>
+          <a href="/blog.html" class="item link">Twitch</a>
+          <a href="/blog.html" class="item link">Websites</a>
+        </div>
+      </div>
+
+      <!-- Page Section -->
+      <section class="main-blog-section">
+        <div class="youtube-vid">
+          <iframe
+            width="1080"
+            height="720"
+            src="https://www.youtube.com/embed/x-NEuWfr7E8"
+            frameborder="0"
+          >
+          </iframe>
+        </div>
+        <div class="blog-title-section">
+          <h1>Men Are TOO MEAN</h1>
+          <p>2022-01-07</p>
+        </div>
+        <div class="line-break"></div>
+        <div class="p-section">
+          <p class="p-link">
+            <a href="#">SvelteKit</a> is one of my favorite frameworks right
+            now, and it just got a whole lot easier to work with inside of VS
+            Code. The <a href="#">SvelteKit</a>
+            Snippets extension for VS Code is a must-have! Let’s take a quick
+            look.
+          </p>
+          <h1>Overview</h1>
+          <p>
+            To use the snippet, you can search for it in the extensions tab of
+            the sidebar inside of VS Code and click install.
+          </p>
+        </div>
+        <div class="blog-pic">
+          <img
+            src="https://www.jamesqquick.com/images/posts/must-have-sveltekit-extension-for-vs-code-sveltekit-snippets/1.png"
+          />
+        </div>
+        <div class="p-section">
+          <p>
+            After you get it installed, now you’ll have access to a load of
+            different snippets that covers all of the essentials.
+          </p>
+          <ul>
+            <li>creating components</li>
+            <li>API endpoints</li>
+            <li>if conditions, for loops, etc</li>
+            <li>load functions</li>
+          </ul>
+          <p class="p-link">
+            This basically gives you the building blocks for everything you need
+            to work with <a href="#">SvelteKit</a>. Here is a full list from the
+            docs.
+          </p>
+        </div>
+      </section>
+      <!-- Footer -->
+      <div class="end-break"></div>
+      <section class="footer">
+        <div class="footer-logos">
+          <a href="/index.html" class="logo fa fa-youtube"></a>
+          <a href="/index.html" class="logo fa fa-twitch"></a>
+          <a href="/index.html" class="logo fa fa-github"></a>
+          <a href="/index.html" class="logo fa fa-instagram"></a>
+        </div>
+        <h4 class="footer-text">@Kiura</h4>
+      </section>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(function () {
+        var scroll = $(document).scrollTop();
+        var navHeight = $('.navbar').outerHeight();
+
+        $(window).scroll(function () {
+          var scrolled = $(document).scrollTop();
+
+          if (scrolled > navHeight) {
+            $('.navbar').addClass('animate');
+          } else {
+            $('.navbar').removeClass('animate');
+          }
+
+          if (scrolled > scroll) {
+            $('.navbar').removeClass('sticky');
+          } else {
+            $('.navbar').addClass('sticky');
+          }
+
+          scroll = $(document).scrollTop();
+        });
+      });
+    </script>
+  </body>
+</html>
