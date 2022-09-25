@@ -7,9 +7,10 @@
 body {
   background-color: rgba(20, 20, 20, 0.342);
   color: #000;
+  font-size: 20px;
 }
 
-.main-section {
+.container {
   padding: 100px;
 }
 
@@ -87,8 +88,6 @@ a.item {
   border-radius: 100px;
 }
 
-.content
-
 /* Introduction */
 .introduction {
   display: flex;
@@ -112,7 +111,7 @@ img.profile-img {
   align-items: center;
 }
 
-.youtube .link {
+.youtube-link .link {
   margin-top: 20px;
   font-size: 20px;
   color: #d12f1a;
@@ -126,7 +125,7 @@ img.profile-img {
   align-items: center;
 }
 
-.twitch .link {
+.twitch-link .link {
   margin-top: 20px;
   font-size: 20px;
   color: #971ad1;
@@ -140,7 +139,7 @@ img.profile-img {
   align-items: center;
 }
 
-.websites .link {
+.websites-link .link {
   margin-top: 20px;
   font-size: 20px;
   color: #1a26d1;
@@ -172,20 +171,10 @@ li a:hover {
 
 /* Blog-Page Section */
 .main-blog-section {
-  padding: 80px;
-}
-
-.youtube-vid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.blog-title-section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-blog-section h1 {
@@ -198,18 +187,6 @@ li a:hover {
   font-size: 20px;
 }
 
-.blog-pic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.blog-pic img {
-  width: 1280px;
-  height: 720px;
-  margin: 30px;
-}
-
 .main-blog-section ul {
   padding: 20px;
 }
@@ -217,6 +194,19 @@ li a:hover {
 .main-blog-section li {
   margin: 5px;
   font-size: 15px;
+}
+
+.blog-content-section ul {
+  padding-left: 20px;
+  margin: 20px;
+}
+
+.blog-content {
+  margin-bottom: 100px;
+}
+
+.blog-content h2 {
+  margin-bottom: 10px;
 }
 
 .p-link a {
@@ -289,6 +279,11 @@ a:hover {
   transition: 0.25s;
 }
 
+a.underline {
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+}
+
 .link:hover {
   cursor: pointer;
   color: #616161;
@@ -297,10 +292,8 @@ a:hover {
 
 .line-break {
   border-bottom: 1px solid #000;
-  margin: 60px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 20px;
+  opacity: 0.5;
 }
 
 .end-break {
@@ -312,6 +305,16 @@ a:hover {
   align-items: center;
 }
 
+blockquote {
+  margin: 30px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+li {
+  text-align: left;
+}
+
 /* Media */
 @media (max-width: 1080px) {
   .youtube-vid iframe {
@@ -319,12 +322,12 @@ a:hover {
     height: 360px;
   }
 
+  .container {
+    padding: 40px;
+    text-align: center;
+  }
+
   .blog-pic img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 580px;
-    height: 360px;
-    margin: 20px;
+    width: 100%;
   }
 } ;

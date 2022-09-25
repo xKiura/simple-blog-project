@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Kiura | Blog</title>
+    <title>Kiura</title>
   </head>
   <body>
-    <div class="container">
-      <!-- Navbar -->
-      <div class="navbar">
-        <div class="navbar-title">
-          <h1>Kiura</h1>
-          <h4>Gamer, Musician, Developer.</h4>
-        </div>
-        <div class="navbar-items">
-          <a href="blog.html" class="item link">Youtube</a>
-          <a href="blog.html" class="item link">Twitch</a>
-          <a href="blog.html" class="item link">Websites</a>
-        </div>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-title">
+        <h2>Kiura</h2>
+        <h4>Gamer, Musician, Developer.</h4>
       </div>
+      <div class="navbar-items">
+        <a href="./blog" class="item link">Youtube</a>
+        <a href="./blog" class="item link">Twitch</a>
+        <a href="./blog" class="item link">Websites</a>
+      </div>
+    </div>
+    <div class="container">
       <div class="main-section">
         <!-- Intro Section-->
         <section class="introduction">
@@ -38,8 +38,8 @@
               laboriosam deserunt tempora, voluptatum, odit nemo perspiciatis
               minima repellendus numquam? Vero, in.
             </p>
-            <div class="profile-pic">
-              <img src="img/kiublank.png" alt="" class="profile-img" />
+            <div class="content-card-picture">
+              <img src="img/kiublank.png" alt="" class="content-logo" />
             </div>
           </div>
           <div class="social-links"></div>
@@ -48,7 +48,7 @@
         <!-- Youtube Section -->
         <section id="youtube">
           <div class="content-title">
-            <h1>YouTube</h1>
+            <h2>YouTube</h2>
           </div>
           <div class="content">
             <p class="content-para">
@@ -68,7 +68,7 @@
         <!-- Twitch Section -->
         <section id="twitch">
           <div class="content-title">
-            <h1>Twitch</h1>
+            <h2>Twitch</h2>
           </div>
           <div class="content">
             <p class="content-para">
@@ -88,7 +88,7 @@
         <!-- Websites Section -->
         <section id="websites">
           <div class="content-title">
-            <h1>Websites</h1>
+            <h2>Websites</h2>
           </div>
           <div class="content">
             <p class="content-para">
@@ -109,10 +109,10 @@
       <div class="end-break"></div>
       <section class="footer">
         <div class="footer-logos">
-          <a href="index.html" class="logo fa fa-youtube"></a>
-          <a href="index.html" class="logo fa fa-twitch"></a>
-          <a href="index.html" class="logo fa fa-github"></a>
-          <a href="index.html" class="logo fa fa-instagram"></a>
+          <a href="./index.html" class="logo fa fa-youtube"></a>
+          <a href="./index.html" class="logo fa fa-twitch"></a>
+          <a href="./index.html" class="logo fa fa-github"></a>
+          <a href="./index.html" class="logo fa fa-instagram"></a>
         </div>
         <h4 class="footer-text">@Kiura</h4>
       </section>
@@ -124,29 +124,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      $(function () {
-        var scroll = $(document).scrollTop();
-        var navHeight = $('.navbar').outerHeight();
-
-        $(window).scroll(function () {
-          var scrolled = $(document).scrollTop();
-
-          if (scrolled > navHeight) {
-            $('.navbar').addClass('animate');
-          } else {
-            $('.navbar').removeClass('animate');
-          }
-
-          if (scrolled > scroll) {
-            $('.navbar').removeClass('sticky');
-          } else {
-            $('.navbar').addClass('sticky');
-          }
-
-          scroll = $(document).scrollTop();
-        });
-      });
-    </script>
+    <script src="javascript/script.js"></script>
   </body>
 </html>
