@@ -11,6 +11,10 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 100px;
 }
 
@@ -150,11 +154,17 @@ img.profile-img {
   padding: 50px;
 }
 
-.blog-section ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.blog-content {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-title-section {
+  padding: 20px;
+}
+
+.blog-content h2 {
+  margin-bottom: 10px;
 }
 
 li a {
@@ -169,6 +179,14 @@ li a:hover {
   transition: 0.25s;
 }
 
+.img-container {
+  padding: 20px;
+}
+
+.img-container img {
+  width: 100%;
+}
+
 /* Blog-Page Section */
 .main-blog-section {
   display: flex;
@@ -181,37 +199,6 @@ li a:hover {
   margin-top: 50px;
   font-size: 30px;
   font-weight: bold;
-}
-
-.main-blog-section p {
-  font-size: 20px;
-}
-
-.main-blog-section ul {
-  padding: 20px;
-}
-
-.main-blog-section li {
-  margin: 5px;
-  font-size: 15px;
-}
-
-.blog-content-section ul {
-  padding-left: 20px;
-  margin: 20px;
-}
-
-.blog-content {
-  margin-bottom: 100px;
-}
-
-.blog-content h2 {
-  margin-bottom: 10px;
-}
-
-.p-link a {
-  color: #d12f1a;
-  transition: 0.25s;
 }
 
 /* Footer Section */
@@ -274,14 +261,18 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #424242;
-  transition: 0.25s;
+a.red {
+  color: red;
 }
 
 a.underline {
   font-weight: bold;
   border-bottom: 1px solid #000;
+}
+
+a:hover {
+  color: #424242;
+  transition: 0.25s;
 }
 
 .link:hover {
@@ -294,6 +285,7 @@ a.underline {
   border-bottom: 1px solid #000;
   margin: 20px;
   opacity: 0.5;
+  width: 100%;
 }
 
 .end-break {
@@ -311,8 +303,21 @@ blockquote {
   border-left: 1px solid rgba(0, 0, 0, 0.164);
 }
 
-li {
+ul {
   text-align: left;
+  padding-left: 50px;
+}
+
+.youtube-vid iframe {
+  padding: 20px;
+}
+
+.code {
+  text-align: left;
+  margin: 20px;
+  padding: 30px;
+  width: 100%;
+  border-radius: 15px;
 }
 
 /* Media */
@@ -327,7 +332,18 @@ li {
     text-align: center;
   }
 
-  .blog-pic img {
+  .img-container img {
     width: 100%;
   }
-} ;
+
+  .code {
+    padding: 15px;
+    font-size: 15px;
+    max-width: none;
+  }
+}
+
+/* Utility */
+.m-md {
+  margin: 20px;
+}

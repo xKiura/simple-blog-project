@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>JavaScript Array Filter Method Practice in 5 Minutes</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-title">
+        <h2>Kiura</h2>
+        <h4>Gamer, Musician, Developer.</h4>
+      </div>
+      <div class="navbar-items">
+        <a href="../blog" class="item link">Youtube</a>
+        <a href="../blog" class="item link">Twitch</a>
+        <a href="../blog" class="item link">Websites</a>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Page Section -->
+      <section class="main-blog-section">
+        <div class="youtube-vid">
+          <iframe
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/3LOEGS4qcRM""
+            frameborder="0"
+          >
+          </iframe>
+        </div>
+        <div class="blog-title-section">
+          <h1>JavaScript Array Filter Method Practice in 5 Minutes</h1>
+          <time>2021-01-05</time>
+        </div>
+      </section>
+      <div class="line-break"></div>
+      <div id="content-1" class="blog-content">
+        <p>JavaScript arrays have some powerful built-in methods that simplify working with them. In this article, let’s look at the array <code>`filter()`</code> method.</p>
+      </div>
+      <div id="content-2" class="blog-content">
+        <h2>Getting Started</h2>
+        <p>This post is part of a series focused on learning JavaScript array methods. You can find the starter code in <a href="#" class="underline red">this repository</a>.</p>
+        <div class="img-container">
+            <img src="https://www.jamesqquick.com/images/posts/javascript-array-filter-explained-in-5-minutes/1.png" alt="">
+        </div>
+        <p>In that repository, there is a <code>`worksheet.js`</code> file with some sample Star Wars data. So, clone the repository, open up the <code>`worksheet.js`</code> file, and scroll down to the Filter section. Alternatively, you can copy the sample data into a JavaScript file without cloning if you choose.</p>
+      </div>
+
+      <p class="m-md">Here's the sample data.</p>
+
+      <pre is:raw="" class="code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">characters</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+        <span class="line"><span style="color: #C9D1D9">  {</span></span>
+        <span class="line"><span style="color: #C9D1D9">    name: </span><span style="color: #A5D6FF">"Luke Skywalker"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    height: </span><span style="color: #79C0FF">172</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    mass: </span><span style="color: #79C0FF">77</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    eye_color: </span><span style="color: #A5D6FF">"blue"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    gender: </span><span style="color: #A5D6FF">"male"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">  },</span></span>
+        <span class="line"><span style="color: #C9D1D9">  {</span></span>
+        <span class="line"><span style="color: #C9D1D9">    name: </span><span style="color: #A5D6FF">"Darth Vader"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    height: </span><span style="color: #79C0FF">202</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    mass: </span><span style="color: #79C0FF">136</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    eye_color: </span><span style="color: #A5D6FF">"yellow"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    gender: </span><span style="color: #A5D6FF">"male"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">  },</span></span>
+        <span class="line"><span style="color: #C9D1D9">  {</span></span>
+        <span class="line"><span style="color: #C9D1D9">    name: </span><span style="color: #A5D6FF">"Leia Organa"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    height: </span><span style="color: #79C0FF">150</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    mass: </span><span style="color: #79C0FF">49</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    eye_color: </span><span style="color: #A5D6FF">"brown"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    gender: </span><span style="color: #A5D6FF">"female"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">  },</span></span>
+        <span class="line"><span style="color: #C9D1D9">  {</span></span>
+        <span class="line"><span style="color: #C9D1D9">    name: </span><span style="color: #A5D6FF">"Anakin Skywalker"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    height: </span><span style="color: #79C0FF">188</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    mass: </span><span style="color: #79C0FF">84</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    eye_color: </span><span style="color: #A5D6FF">"blue"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">    gender: </span><span style="color: #A5D6FF">"male"</span><span style="color: #C9D1D9">,</span></span>
+        <span class="line"><span style="color: #C9D1D9">  },</span></span>
+        <span class="line"><span style="color: #C9D1D9">];</span></span></code></pre>
+      </pre>
+
+        <div id="content-3" class="blog-content">
+        <h2>Array Filter Overview</h2>
+        <p>The filter method returns a new array with only the items that we wish to be included. We tell the filter method which items to include by passing it a callback function. This callback function accepts one parameter (each item in the array), and then we return a boolean of whether or not that item should be included in the filtered results.</p>
+        <p class="m-md">For example, if we have an array of numbers and we only want the numbers that are greater than 50, our filter condition would look like this.</p>
+
+        <pre is:raw="" class="code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">num </span><span style="color: #FF7B72">&gt;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">;</span></span></code></pre>
+
+        <p class="m-md">So, the entire filter would look like this.</p>
+        
+        <!-- <pre is:raw="" class="code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">numbers</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">25</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">75</span><span style="color: #C9D1D9">];</span></span>
+        <span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">lessThan50</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> numbers.</span><span style="color: #D2A8FF">filter</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">num</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> {</span></span>
+        <span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> num </span><span style="color: #FF7B72">&gt;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">;</span></span>
+        <span class="line"><span style="color: #C9D1D9">});</span></span></code></pre> -->
+
+        <p class="m-md">Let’s take a look at a few exercises.</p>
+            
+        </div>
+        <div id="content-4" class="blog-content">
+            <h2>1. Get characters with mass greater than 100</h2>
+            <p class="m-md">Remember we call filter by passing it a callback function that determines whether or not a given item should be filtered or included. In this case, the condition is <code>`character.mass > 100`</code>. So, our filter will look like this.</p>
+    
+            <!-- <pre is:raw="" class="code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">greater100Characters</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> characters.</span><span style="color: #D2A8FF">filter</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">character</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> {</span></span>
+            <span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> character.mass </span><span style="color: #FF7B72">&gt;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">;</span></span>
+            <span class="line"><span style="color: #C9D1D9">});</span></span></code></pre> -->
+        </div>
+
+    </div>
+    </div>
+      <!-- Footer -->
+      <div class="end-break"></div>
+      <section class="footer">
+        <div class="footer-logos">
+          <a href="../index.html" class="logo fa fa-youtube"></a>
+          <a href="../index.html" class="logo fa fa-twitch"></a>
+          <a href="../index.html" class="logo fa fa-github"></a>
+          <a href="../index.html" class="logo fa fa-instagram"></a>
+        </div>
+        <h4 class="footer-text">@Kiura</h4>
+      </section>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
