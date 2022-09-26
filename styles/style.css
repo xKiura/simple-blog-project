@@ -151,7 +151,11 @@ img.profile-img {
 
 /* --- Blog Section --- */
 .blog-section {
-  padding: 50px;
+  text-align: left;
+}
+
+.post-content {
+  margin: 40px;
 }
 
 .blog-content {
@@ -263,6 +267,12 @@ a {
 
 a.red {
   color: red;
+}
+
+a.strong {
+  color: #000;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 a.underline {
